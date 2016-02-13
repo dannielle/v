@@ -1,0 +1,87 @@
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type = "text/javascript">
+
+$(document).ready(function(){
+
+    var titles = [
+        "You're as sweet as red beans",
+        "You're as lovely as all the fish in the world",
+        "You're as wonderful as all the astronauts",
+        "I want to touch your buns",
+        "I want to hug you until you die",
+        "I want to bite your nose",
+        "I'm going to eat your nose off",
+        "I'm going to eat your face",
+        "I love everything about you",
+        "Your eyes are gorgeous",
+        "Everything about you is gorgeous",
+        "Everything about you is brilliant",
+        "You are one cool cat",
+        "You're my egg toast",
+        "You're my sweet cigar",
+        "I'm going to pick you up and eat you",
+        "You're my favorite boyfriend",
+        "You're my favorite girlfriend",
+        "You're the most gorgeous sprout",
+        "You're my favorite sprout",
+        "You're as sweet honey",
+        "You're golden like honey",
+        "You have the coolest sweaters",
+        "You have the best brain",
+        "You're incredibly smart",
+        "You're incredible",
+        "You're brilliant"
+    ];
+
+    var terminals = {};
+    var startwords = [];
+    var wordstats = {};
+
+    for (var i = 0; i < titles.length; i++) {
+        var words = titles[i].split(' ');
+        terminals[words[words.length-1]] = true;
+        startwords.push(words[0]);
+        for (var j = 0; j < words.length - 1; j++) {
+            if (wordstats.hasOwnProperty(words[j])) {
+                wordstats[words[j]].push(words[j+1]);
+            } else {
+                wordstats[words[j]] = [words[j+1]];
+            }
+        }
+    }
+
+    var choice = function (a) {
+        var i = Math.floor(a.length * Math.random());
+        return a[i];
+    };
+
+    var make_title = function (min_length) {
+        word = choice(startwords);
+        var title = [word];
+        while (wordstats.hasOwnProperty(word)) {
+            var next_words = wordstats[word];
+            word = choice(next_words);
+            title.push(word);
+            if (title.length > min_length && terminals.hasOwnProperty(word)) break;
+        }
+        if (title.length < min_length) return make_title(min_length);
+        return title.join(' ');
+    };
+
+    $('#generate').on('click', function () {
+        var title = make_title(3 + Math.floor(3 * Math.random()));
+        $('#generated_title').html(title);
+    });
+
+});
+
+</script>
+</head>
+<body>
+
+<div id="generated_title"></div>
+<button id="generate">Generate</button>
+
+</body>
