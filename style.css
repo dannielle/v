@@ -8,8 +8,27 @@ section {
   margin:6em 0;
 }
 
-.content {
+.content, footer {
   max-width: 800px;
   margin: 6em auto;
   text-align: center;
+}
+
+footer {
+	font-size: .75em;
+}
+
+/*
+EmojiSymbols Font (c)blockworks - Kenichi Kaneko
+http://emojisymbols.com/
+*/
+@font-face {
+	font-family: "EmojiSymbols";
+	src: url('EmojiSymbols-Regular.woff') format('woff');
+	text-decoration: none;
+	font-style: normal;
+}
+.emj {
+	font-family: "EmojiSymbols";
+	line-height: 1;
 }
