@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    var titles = [
+    var sayings = [
         "You're as sweet as chickens",
         "You're my sweet chicken",
         "You're as sweet as red beans",
@@ -120,8 +120,8 @@ $(document).ready(function(){
     var startwords = [];
     var wordstats = {};
 
-    for (var i = 0; i < titles.length; i++) {
-        var words = titles[i].split(' ');
+    for (var i = 0; i < sayings.length; i++) {
+        var words = sayings[i].split(' ');
         terminals[words[words.length-1]] = true;
         startwords.push(words[0]);
         for (var j = 0; j < words.length - 1; j++) {
@@ -138,22 +138,22 @@ $(document).ready(function(){
         return a[i];
     };
 
-    var make_title = function (min_length) {
+    var make_saying = function (min_length) {
         word = choice(startwords);
-        var title = [word];
+        var saying = [word];
         while (wordstats.hasOwnProperty(word)) {
             var next_words = wordstats[word];
             word = choice(next_words);
-            title.push(word);
-            if (title.length > min_length && terminals.hasOwnProperty(word)) break;
+            saying.push(word);
+            if (saying.length > min_length && terminals.hasOwnProperty(word)) break;
         }
-        if (title.length < min_length) return make_title(min_length);
-        return title.join(' ');
+        if (saying.length < min_length) return make_saying(min_length);
+        return saying.join(' ');
     };
 
     $('#generate').on('click', function () {
-        var title = make_title(3 + Math.floor(3 * Math.random()));
-        $('#generated_title').html(title);
+        var saying = make_saying(3 + Math.floor(3 * Math.random()));
+        $('#generated_saying').html(saying);
     });
 
 });
