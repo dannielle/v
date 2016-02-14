@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
     var titles = [
+        "You're as sweet as chickens",
+        "You're my sweet chicken",
         "You're as sweet as red beans",
         "You're as lovely as all the fish in the world",
         "You're as wonderful as all the astronauts",
@@ -59,7 +61,19 @@ $(document).ready(function(){
         "You have the best brain",
         "You're incredibly smart",
         "You're incredible",
-        "You're brilliant"
+        "You're brilliant",
+        "Your green eyes give me life",
+        "I want to bake with you for the rest of my life",
+        "You and I will go far together",
+        "I want to get another cat with you",
+        "I want to go on a road trip together",
+        "You're a cozy scarf",
+        "You keep me warm",
+        "You heat up my toes",
+        "You have such lovely touch",
+        "Your taste in music is great",
+        "You're the best goddamn dancer I know"
+
     ];
 
     var terminals = {};
