@@ -14,6 +14,79 @@ section {
   text-align: center;
 }
 
+.quote, .generated-quote {
+	display: block;
+	margin:1em;
+	font-style: italic;
+	background-color: rgba(255, 255, 255, .5);
+	border-radius: 30px;
+	padding:1em;
+	position: relative;
+	color: #777;
+}
+
+button {
+	margin: 0 auto 2em auto;
+	display: block;
+	text-align: center;
+	background-color: rgb(85, 26, 139);
+	border: 0;
+	border-radius:5px;
+	color: white;
+	font-family: 'Arvo', serif;
+	font-size: .75em;
+	padding: 1em;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+.us { font-size: 2.5em; }
+
+.generated-quote {
+	background-color: white;
+	font-size:1.5em;
+}
+
+.generated-quote:after {
+	content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 335px;
+    border-width: 20px 20px 0;
+    border-style: solid;
+    border-color: white transparent;
+    display: block;
+    width: 0;
+}
+
+.you-said:after {
+	content: "";
+    position: absolute;
+    bottom: -auto;
+    left: -20px;
+    top: 40px;
+    border-width: 15px 20px 15px 0;
+    border-style: solid;
+    border-color: transparent rgba(255, 255, 255, .5);
+    display: block;
+    width: 0;
+}
+
+.i-said:after {
+	content: "";
+    position: absolute;
+    bottom: auto;
+    right: -20px;
+    top: 40px;
+    border-width: 15px 0px 15px 20px;
+    border-style: solid;
+    border-color: transparent rgba(255, 255, 255, .5);
+    width: 0;
+    display: block;
+}
+
 footer {
 	font-size: .75em;
 }
