@@ -1,3 +1,15 @@
 body { 
   background-color: #ebd4fc;
+  font-family: 'Arvo', serif;
+  font-size: 2em;
+}
+
+section {
+  margin:6em 0;
+}
+
+.content {
+  max-width: 800px;
+  margin: 6em auto;
+  text-align: center;
 }
