@@ -4,6 +4,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="markovchain.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            var d = new Date();
+            var n = d.toDateString();
+            document.getElementById("date").innerHTML = n;
+        })
+    </script>
 </head>
 <body>
 
@@ -30,6 +38,7 @@
             </div>
         </section>
         <section>
+            <p>I like you a lot and I hope you had fun with this. I'm glad we were able to celebrate each other this <span id="date"></span>.</p>
             <p>Don't forget to send me your favorite ones. <span class="emj">&#x1F618;</span> </p>
         </section>
 
